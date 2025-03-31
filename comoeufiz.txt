@@ -1,0 +1,30 @@
+Tentei de todas a maneiras dar um push seguindo a orientação do curso, mas não tive sucesso,apresentava erro de
+permissão mesmo usando o token, tentei algumas opções passadas pelo chatgpt, a que funcionou foi usar acesso ssh 
+e gerar uma chave. Segue abaixo:
+
+✅ 4. Alternativa: Usar SSH em vez de HTTPS
+Se o problema persistir, você pode configurar o acesso via SSH, que é mais confiável:
+
+Gere uma chave SSH (se ainda não tiver):
+
+ssh-keygen -t ed25519 -C "seu-email@example.com"
+(Pressione Enter para aceitar o local padrão).
+
+Adicione a chave ao GitHub:
+
+cat ~/.ssh/id_ed25519.pub
+Copie a saída e cole em GitHub → Settings → SSH and GPG keys.
+
+Teste a conexão:
+
+ssh -T git@github.com
+
+Se a conexão funcionar, altere a URL do repositório para SSH:
+
+git remote set-url origin git@github.com:Guilherme-Freire-W/Linux-projeto1_iac.git
+
+Agora tente novamente:
+
+git push origin main
+
+"E fim..."
